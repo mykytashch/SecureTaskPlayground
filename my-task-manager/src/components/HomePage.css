@@ -1,0 +1,41 @@
+/* src/HomePage.css */
+.homepage {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: #4CAF50;
+  color: white;
+  text-align: center;
+  padding: 1em 0;
+}
+
+.login-section {
+  margin: 2em auto;
+  text-align: center;
+}
+
+.login-form input {
+  margin: 0.5em;
+  padding: 0.5em;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.login-form button {
+  padding: 0.5em 1em;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.login-form button:hover {
+  background-color: #45a049;
+}
+
+.about-section {
+  margin: 2em;
+  text-align: center;
+}

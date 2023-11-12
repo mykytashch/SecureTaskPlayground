@@ -1,0 +1,19 @@
+/* src/TaskListPage.css */
+.task-list-page {
+  font-family: Arial, sans-serif;
+  margin: 2em auto;
+  text-align: center;
+}
+
+.task-list {
+  list-style: none;
+  padding: 0;
+}
+
+.task-list li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 4px;
+}
