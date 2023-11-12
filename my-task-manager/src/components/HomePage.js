@@ -1,14 +1,15 @@
 // src/components/HomePage.js
-import React, { useState } from 'react';
-import './HomePage.css'; // Путь к CSS-файлу для HomePage
+import React from 'react';
+import { useKeycloak } from '@react-keycloak/web';
+import './HomePage.css';
 
 function HomePage() {
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const { keycloak } = useKeycloak();
 
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // Логика входа
+  const handleLogin = () => {
+    if (keycloak && !keycloak.authenticated) {
+      keycloak.login();
+    }
   };
 
   return (
@@ -19,22 +20,11 @@ function HomePage() {
       </header>
 
       <section className="login-section">
-        <form onSubmit={handleLogin} className="login-form">
-          <input 
-            type="text" 
-            placeholder="Имя пользователя" 
-            value={username} 
-            onChange={e => setUsername(e.target.value)} 
-          />
-          <input 
-            type="password" 
-            placeholder="Пароль" 
-            value={password} 
-            onChange={e => setPassword(e.target.value)} 
-          />
-          <button type="submit">Войти</button>
-        </form>
-        <a href="/signup">Регистрация</a>
+        {keycloak && keycloak.authenticated ? (
+          <p>Добро пожаловать, {keycloak.tokenParsed.preferred_username}!</p>
+        ) : (
+          <button onClick={handleLogin}>Войти</button>
+        )}
       </section>
 
       <section className="about-section">

@@ -1,12 +1,22 @@
 // src/components/TaskListPage.js
 import React, { useState, useEffect } from 'react';
-import './TaskListPage.css'; // Путь к CSS-файлу для TaskListPage
+import axios from 'axios';
+import './TaskListPage.css';
 
 function TaskListPage() {
   const [tasks, setTasks] = useState([]);
 
   useEffect(() => {
-    // Загрузка задач
+    const fetchTasks = async () => {
+      try {
+        const response = await axios.get('http://localhost:8080/tasks');
+        setTasks(response.data);
+      } catch (error) {
+        console.error('Ошибка при загрузке задач:', error);
+      }
+    };
+
+    fetchTasks();
   }, []);
 
   return (

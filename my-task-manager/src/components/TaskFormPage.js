@@ -1,6 +1,7 @@
 // src/components/TaskFormPage.js
 import React, { useState } from 'react';
-import './TaskFormPage.css'; // Путь к CSS-файлу для TaskFormPage
+import axios from 'axios';
+import './TaskFormPage.css';
 
 function TaskFormPage() {
   const [task, setTask] = useState({ title: '', description: '' });
@@ -9,9 +10,15 @@ function TaskFormPage() {
     setTask({ ...task, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Обработка создания или обновления задачи
+    try {
+      const response = await axios.post('http://localhost:8080/tasks', task);
+      console.log('Задача добавлена:', response.data);
+      // Опционально: редирект или обновление UI
+    } catch (error) {
+      console.error('Ошибка при создании задачи:', error);
+    }
   };
 
   return (
