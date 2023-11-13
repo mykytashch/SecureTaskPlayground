@@ -1,3 +1,5 @@
+// Task.java in /Users/mykyta/Desktop/SecureTaskPlayground/code-with-quarkus/src/main/java/org/acme
+
 package org.acme;
 
 import jakarta.persistence.Entity;
