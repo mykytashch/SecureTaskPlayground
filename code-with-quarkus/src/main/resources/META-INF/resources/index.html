@@ -1,28 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <link rel="stylesheet" href="style.css">
-
     <meta charset="UTF-8">
-    <title>Task Test Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task Management System</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h2>Task Management</h2>
+    <header>
+        <h1>Welcome to Task Management System</h1>
+    </header>
 
-    <!-- Форма для создания задачи -->
-    <h3>Create Task</h3>
-    <form id="createTaskForm">
-        Title: <input type="text" id="title"><br>
-        Description: <input type="text" id="description"><br>
-        <button type="submit">Create Task</button>
-    </form>
+    <nav>
+        <ul>
+            <li><a href="login.html">Login</a></li>
+            <li><a href="register.html">Register</a></li>
+        </ul>
+    </nav>
 
-    <hr>
+    <main>
+        <p>This is the main content of the home page.</p>
+    </main>
 
-    <!-- Список задач -->
-    <h3>Tasks</h3>
-    <ul id="taskList"></ul>
-
-    <script src="app.js"></script>
+    <footer>
+        <p>&copy; 2023 Task Management System</p>
+    </footer>
 </body>
 </html>
