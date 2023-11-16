@@ -1,3 +1,3 @@
 # SecureTaskPlayground
 
-![photo_2023-11-13 12 45 55 AM](https://github.com/mykytashch/SecureTaskPlayground/assets/129088502/c48bed10-6774-465a-9abd-8a1cfcc0c7d5)
+![57372E19-7EA4-4A2C-9550-D26C9E2E7255](https://github.com/mykytashch/SecureTaskPlayground/assets/129088502/525bffc7-d716-4f2b-9f31-be7e01230bbc)
