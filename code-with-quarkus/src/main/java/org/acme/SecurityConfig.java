@@ -1,4 +1,4 @@
-package org.acme.config;
+package org.acme;
 
 import io.quarkus.oidc.runtime.OidcJwtCallerPrincipal;
 import io.quarkus.security.AuthenticationFailedException;

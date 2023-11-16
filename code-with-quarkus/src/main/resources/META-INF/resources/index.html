@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Task Management System</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Include Keycloak JavaScript Adapter -->
+    <script src="path/to/keycloak.js"></script>
+    <script src="index.js"></script>
 </head>
 <body>
     <header>
@@ -12,18 +15,23 @@
     </header>
 
     <nav>
-        <ul>
-            <li><a href="login.html">Login</a></li>
-            <li><a href="register.html">Register</a></li>
+        <ul id="navigation">
+            <!-- Navigation links will be updated dynamically -->
         </ul>
     </nav>
 
-    <main>
+    <main id="react-root">
+        <!-- React will render components here -->
         <p>This is the main content of the home page.</p>
     </main>
 
     <footer>
         <p>&copy; 2023 Task Management System</p>
     </footer>
+
+    <!-- Include React and other necessary scripts -->
+    <script src="path/to/react.js"></script>
+    <script src="path/to/react-dom.js"></script>
+    <script src="path/to/your-react-components.js"></script>
 </body>
 </html>
