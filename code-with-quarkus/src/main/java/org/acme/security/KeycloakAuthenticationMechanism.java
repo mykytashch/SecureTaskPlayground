@@ -5,6 +5,7 @@ import javax.inject.Inject;
 import io.quarkus.oidc.IdToken;
 import io.quarkus.oidc.OidcSession;
 import io.quarkus.security.identity.SecurityIdentity;
+import org.eclipse.microprofile.jwt.JsonWebToken;
 import org.keycloak.representations.AccessToken;
 
 @ApplicationScoped
@@ -25,14 +26,17 @@ public class KeycloakAuthenticationMechanism {
         return securityIdentity.getPrincipal().getName();
     }
 
-    // Получение токена доступа
+    // Получение токена доступа (необходимо уточнить правильный метод)
     public String getAccessToken() {
-        return oidcSession.getTokens().getAccessToken();
+        // Например, использование oidcSession.getIdToken().getTokenString()
+        // Ваша логика получения токена здесь
+        return null;
     }
 
     // Получение информации о пользователе из ID токена
     public AccessToken getUserInfo() {
-        return idToken.claim("userinfo").as(AccessToken.class);
+        // Ваша логика извлечения данных из токена здесь
+        return null;
     }
 
     // Проверка роли пользователя
@@ -40,5 +44,5 @@ public class KeycloakAuthenticationMechanism {
         return securityIdentity.hasRole(role);
     }
 
-    // Добавьте здесь другие методы, которые вам нужны для работы с Keycloak
+    // Дополнительные методы...
 }

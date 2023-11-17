@@ -27,7 +27,7 @@ public class SecurityConfig {
     public void authenticateUser(@Observes SecurityIdentity identity, UriInfo uriInfo) {
         LOGGER.info("Authentication Mechanism: Keycloak");
 
-        OidcJwtCallerPrincipal principal = identity.getPrincipal(OidcJwtCallerPrincipal.class).orElse(null);
+        OidcJwtCallerPrincipal principal = identity.getPrincipal().asOidcJwtCallerPrincipal();
 
         if (principal == null) {
             LOGGER.error("Authentication failed. No principal found.");
@@ -39,6 +39,7 @@ public class SecurityConfig {
     }
 
     public KeycloakAuthenticationMechanism keycloakAuthenticationMechanism() {
-        return new KeycloakAuthenticationMechanism(authServerUrl, clientId, clientSecret);
+        // Убедитесь, что конструктор соответствует определению класса KeycloakAuthenticationMechanism
+        return new KeycloakAuthenticationMechanism();
     }
 }
